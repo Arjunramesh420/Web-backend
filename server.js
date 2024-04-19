@@ -1,18 +1,19 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose"); // Import Mongoose
 
 const app = express();
-app.use(cors());
+
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
-// Handle Mongoose Deprecation Warning
-mongoose.set('strictQuery', false);
 
 const db = require("./app/models");
 db.mongoose
@@ -30,14 +31,13 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome To Dynamics101" });
+  res.json({ message: "Welcome to bezkoder application." });
 });
 
-// require("./app/routes/contact.routes")(app);
-require("./app/routes/movies.routes")(app);
+require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 5000; // Change port number here
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
