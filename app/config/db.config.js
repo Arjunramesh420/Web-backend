@@ -1,3 +1,3 @@
 module.exports = {
-  url: "mongodb://0.0.0.0:27017/bezkoder_db"
+  url: "mongodb+srv://ArjunRamesh:cHaI4yZytuNdBvLQ@cluster0.qggb6w2.mongodb.net/Dynamic_clientContact"
 };
