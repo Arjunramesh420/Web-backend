@@ -20,7 +20,6 @@ const MoviesList = db.MovieList;
 //   });
 
 //   // Save contact in the database
-//   contactus
 //     .save()
 //     .then(data => {
 //       res.send(data);
